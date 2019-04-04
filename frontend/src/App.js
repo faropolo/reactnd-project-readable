@@ -1,26 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import AppRoutes from "./Routes";
+import { Container, Row, Col } from "reactstrap";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faThumbsUp, faThumbsDown } from "@fortawesome/free-regular-svg-icons";
+
+library.add(faThumbsUp, faThumbsDown);
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Container fluid={true}>
+        <Row className="justify-content-center">
+          <Col xs="auto">Readable Project</Col>
+        </Row>
+        <AppRoutes {...this.props} />
+      </Container>
     );
   }
 }
